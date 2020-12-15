@@ -33,10 +33,10 @@ jobs:
         run: npx semantic-release --ci --dry-run
         if: ${{ github.event.repository.fork }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
 
       - name: semantic-release
         run: npx semantic-release --ci
         if: ${{ !github.event.repository.fork }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
